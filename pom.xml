@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>bd2</groupId>
-	<artifactId>Polyglot</artifactId>
+	<artifactId>Grupo18</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
 
-	<name>Polyglot</name>
+	<name>Grupo18</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

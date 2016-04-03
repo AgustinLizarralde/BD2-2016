@@ -1,67 +1,80 @@
-/**
- * 
- */
 package bd2.model;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author bd2
+ * Diccionario de un idioma con las palabras y sus definiciones
  *
  */
 public class Diccionario {
+	public Map<String,String> diccionario = new HashMap<String, String>();
+	public String edicion;
+	public Idioma idioma;
+	
+	
+	public Diccionario() {
+		super();
+	}
 
-	protected Map<String, String> definiciones = new HashMap<String, String>();
-	protected Idioma idioma;
-	protected String edicion;
-	private long id;
-	/**
-	 * 
-	 */
+	public Diccionario(Idioma idioma) {
+		super();
+		this.idioma = idioma;
+	}
+
 	public Diccionario(Idioma idioma, String edicion) {
-		this.idioma = idioma;
+		super();
 		this.edicion = edicion;
-	}
-
-	public Map<String, String> getDefiniciones() {
-		return definiciones;
-	}
-
-	public void setDefiniciones(Map<String, String> definiciones) {
-		this.definiciones = definiciones;
-	}
-	
-	public void agregarDefinicion(String palabra, String significado){
-		this.getDefiniciones().put(palabra, significado);
-	}
-	
-	public String definicion(String palabra){
-		return this.getDefiniciones().get(palabra);
-	}
-
-	public Idioma getIdioma() {
-		return idioma;
-	}
-
-	public void setIdioma(Idioma idioma) {
 		this.idioma = idioma;
 	}
 
+	/**
+	 * @param agrega una definicion al diccionario
+	 */
+	public void agregarDefinicion(String palabra, String definicion){
+		this.diccionario.put(palabra, definicion);
+	}
+	
+	/**
+	 * @return la definicion de la palabra dada
+	 */
+	public String definicion(String palabra) {
+		return this.diccionario.get(palabra);
+	}
+	
+	/**
+	 * @return la edicion
+	 */
 	public String getEdicion() {
 		return edicion;
 	}
 
+	/**
+	 * @param setea la edicion
+	 */
 	public void setEdicion(String edicion) {
 		this.edicion = edicion;
 	}
 
-	public long getId() {
-		return id;
+	/**
+	 * @return el idioma
+	 */
+	public Idioma getIdioma() {
+		return idioma;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	/**
+	 * @param setea el idioma
+	 */
+	public void setIdioma(Idioma idioma) {
+		this.idioma = idioma;
+	}
+	
+	/**
+	 * @return las definiciones como un Map<String, String>
+	 */
+	public Map<String,String> getDefiniciones() {
+		return this.diccionario;
 	}
 
 }
