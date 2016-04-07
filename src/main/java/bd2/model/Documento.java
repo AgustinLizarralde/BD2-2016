@@ -28,49 +28,49 @@ public class Documento {
 	}
 
 	/**
-	 * @return el idioma
+	 * @return el idioma del documento
 	 */
 	public Idioma getIdioma() {
 		return idioma;
 	}
 	
 	/**
-	 * @param setea el idioma
+	 * @param idioma idioma del documento
 	 */
 	public void setIdioma(Idioma idioma) {
 		this.idioma = idioma;
 	}
 	
 	/**
-	 * @return el nombre
+	 * @return nombre del documento
 	 */
 	public String getNombre() {
 		return nombre;
 	}
 	
 	/**
-	 * @param setea el nombre
+	 * @param nombre nombre del documento
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	
 	/**
-	 * @return la complejidad
+	 * @return numero indicando la complejidad
 	 */
 	public Integer getComplejidad() {
 		return complejidad;
 	}
 
 	/**
-	 * @param setea la complejidad
+	 * @param complejidad complejidad en forma numerica
 	 */
 	public void setComplejidad(Integer complejidad) {
 		this.complejidad = complejidad;
 	}
 
 	/**
-	 * @return collection de parrafos
+	 * @return coleccion de parrafos del documento
 	 */
 	public Collection<Parrafo> getParrafos() {
 		return this.parrafos;
@@ -78,6 +78,8 @@ public class Documento {
 	
 	/**
 	 * crea un parrafo a partir del string, lo guarda y devuelve el parrafo
+	 * @param texto texto del nuevo parrafo
+	 * @return parrafo insertado
 	 */
 	public Parrafo agregarParrafo(String texto) {
 		Parrafo parrafo = new Parrafo(texto, this);

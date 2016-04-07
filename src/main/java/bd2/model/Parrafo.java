@@ -15,35 +15,35 @@ public class Parrafo {
 	}
 
 	/**
-	 * @return el texto
+	 * @return texto del parrafo
 	 */
 	public String getTexto() {
 		return texto;
 	}
 	
 	/**
-	 * @param setea el texto del parrafo
+	 * @param texto texto del parrafo
 	 */
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
 	
 	/**
-	 * @return el documento
+	 * @return documento al que pertenece
 	 */
 	public Documento getDocumento() {
 		return documento;
 	}
 	
 	/**
-	 * @param setea el documento al que pertenece
+	 * @param documento documento al que pertenece
 	 */
 	public void setDocumento(Documento documento) {
 		this.documento = documento;
 	}
 	
 	/**
-	 * @return el idioma
+	 * @return idioma del parrafo
 	 */
 	public Idioma getIdioma() {
 		return this.documento.getIdioma();

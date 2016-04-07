@@ -17,28 +17,28 @@ public class Evaluacion extends Tarea {
 	}
 	
 	/**
-	 * @return el puntaje
+	 * @return puntaje de la evaluacion en formato numerico entero
 	 */
 	public int getPuntaje() {
 		return puntaje;
 	}
 	
 	/**
-	 * @param setea el puntaje
+	 * @param puntaje puntaje de la evaluacion en formato numerico entero
 	 */
 	public void setPuntaje(int puntaje) {
 		this.puntaje = puntaje;
 	}
 	
 	/**
-	 * @return la traduccion
+	 * @return traduccion asociada a la evaluacion
 	 */
 	public Traduccion getTraduccion() {
 		return traduccion;
 	}
 	
 	/**
-	 * @param setea la traduccion
+	 * @param traduccion traduccion asociada a la evaluacion
 	 */
 	public void setTraduccion(Traduccion traduccion) {
 		this.traduccion = traduccion;

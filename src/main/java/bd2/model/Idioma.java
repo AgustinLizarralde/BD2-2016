@@ -21,28 +21,28 @@ public class Idioma {
 	}
 
 	/**
-	 * @return el nombre
+	 * @return nombre del idioma
 	 */
 	public String getNombre() {
 		return nombre;
 	}
 	
 	/**
-	 * @param setea el nombre
+	 * @param nombre nombre del idioma 
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	
 	/**
-	 * @return el diccionario
+	 * @return diccionario del idioma
 	 */
 	public Diccionario getDiccionario() {
 		return diccionario;
 	}
 	
 	/**
-	 * @param setea el diccionario
+	 * @param diccionario diccionario del idioma
 	 */
 	public void setDiccionario(Diccionario diccionario) {
 		this.diccionario = diccionario;

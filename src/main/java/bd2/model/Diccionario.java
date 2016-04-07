@@ -29,14 +29,17 @@ public class Diccionario {
 	}
 
 	/**
-	 * @param agrega una definicion al diccionario
+	 * Agrega definiciones al diccionario de la forma palabra-definicion
+	 * @param palabra palabra a definir
+	 * @param definicion definicion de la palabra
 	 */
 	public void agregarDefinicion(String palabra, String definicion){
 		this.diccionario.put(palabra, definicion);
 	}
 	
 	/**
-	 * @return la definicion de la palabra dada
+	 * @return String definicion de la palabra dada
+	 * @param palabra dalabra a buscar definicion
 	 */
 	public String definicion(String palabra) {
 		return this.diccionario.get(palabra);
@@ -50,28 +53,28 @@ public class Diccionario {
 	}
 
 	/**
-	 * @param setea la edicion
+	 * @param edicion nombre de la edicion
 	 */
 	public void setEdicion(String edicion) {
 		this.edicion = edicion;
 	}
 
 	/**
-	 * @return el idioma
+	 * @return Idioma objeto idioma
 	 */
 	public Idioma getIdioma() {
 		return idioma;
 	}
 
 	/**
-	 * @param setea el idioma
+	 * @param idioma el idioma del diccionario
 	 */
 	public void setIdioma(Idioma idioma) {
 		this.idioma = idioma;
 	}
 	
 	/**
-	 * @return las definiciones como un Map<String, String>
+	 * @return Coleccion de definiciones como un Map<String, String>
 	 */
 	public Map<String,String> getDefiniciones() {
 		return this.diccionario;

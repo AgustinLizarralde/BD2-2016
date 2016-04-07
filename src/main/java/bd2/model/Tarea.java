@@ -23,49 +23,49 @@ public abstract class Tarea {
 	}
 
 	/**
-	 * @return la fecha
+	 * @return fecha de la tarea
 	 */
 	public Date getFecha() {
 		return fecha;
 	}
 	
 	/**
-	 * @param setea la fecha
+	 * @param fecha fecha de la tarea
 	 */
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
 	
 	/**
-	 * @return la descripcion
+	 * @return descripcion de la tarea
 	 */
 	public String getDescripcion() {
 		return descripcion;
 	}
 	
 	/**
-	 * @param setea la descripcion
+	 * @param descripcion descripcion de la tarea
 	 */
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
 	
 	/**
-	 * @param setea la tarea como completa
+	 * setea la tarea como completa
 	 */
 	public void completar() {
 		this.completa = true;
 	}
 
 	/**
-	 * @return el estado completo
+	 * @return estado de finalizacion
 	 */
 	public Boolean getCompleta() {
 		return completa;
 	}
 
 	/**
-	 * @param setea el valor del estado "completo"
+	 * @param completa valor booleano del estado de finalizacion
 	 */
 	public void setCompleta(Boolean completa) {
 		this.completa = completa;

@@ -18,47 +18,47 @@ public class Traduccion extends Tarea {
 		this.texto = texto;
 	}
 	/**
-	 * @return el parrafo
+	 * @return parrafo original
 	 */
 	public Parrafo getParrafo() {
 		return parrafo;
 	}
 	
 	/**
-	 * @param setea el parrafo
+	 * @param parrafo parrafo original
 	 */
 	public void setParrafo(Parrafo parrafo) {
 		this.parrafo = parrafo;
 	}
 	
 	/**
-	 * @return el idioma
+	 * @return idioma al que se ha traducido
 	 */
 	public Idioma getIdioma() {
 		return idioma;
 	}
 	
 	/**
-	 * @param setea el idioma
+	 * @param idioma idioma al que se ha traducido
 	 */
 	public void setIdioma(Idioma idioma) {
 		this.idioma = idioma;
 	}
 	
 	/**
-	 * @return el idiomaOriginal
+	 * @return idioma original del parrafo
 	 */
 	public Idioma getIdiomaOriginal() {
 		return parrafo.getIdioma();
 	}
 	/**
-	 * @return el texto (traduccion hecha)
+	 * @return texto traducido
 	 */
 	public String getTexto() {
 		return texto;
 	}
 	/**
-	 * @param setea el texto (traduccion hecha)
+	 * @param texto texto traducido
 	 */
 	public void setTexto(String texto) {
 		this.texto = texto;
