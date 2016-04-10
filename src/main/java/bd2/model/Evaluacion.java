@@ -3,7 +3,7 @@ package bd2.model;
 import java.util.Date;
 
 /**
- * Clase para la evaluación de las traducciones 
+ * Clase para la evaluacion de las traducciones 
  *
  */
 public class Evaluacion extends Tarea {

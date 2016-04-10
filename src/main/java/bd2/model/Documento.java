@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 /**
- * Un documento tiene un idioma y está compuesto por parrafos
+ * Un documento tiene un idioma y esta compuesto por parrafos
  *
  */
 public class Documento {

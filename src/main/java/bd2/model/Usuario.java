@@ -15,7 +15,9 @@ import java.util.Iterator;
 public class Usuario {
 	
 	/**
-	 * @param mail
+	 * Crea un usuario con el email, el nombre y la fecha de creacion recibidos como
+	 * parametro.
+	 * @param email
 	 * @param nombre
 	 * @param fechaDeCreacion
 	 */
@@ -35,69 +37,92 @@ public class Usuario {
 	private Collection<Cursada> cursadasRealizadas = new ArrayList<Cursada>();
 	
 	/**
-	 * @return the email
+	 * Devuelve el correo electronico del usuario.
+	 * @return Email del usuario.
 	 */
 	public String getEmail() {
 		return email;
 	}
 	
 	/**
-	 * @param mail the mail to set
+	 * Guarda la direccion de correo electronico del usuario.
+	 * @param email
 	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
 	
 	/**
-	 * @return the nombre
+	 * Devuelve el nombre del usuario.
+	 * @return Nombre del usuario.
 	 */
 	public String getNombre() {
 		return nombre;
 	}
 	
 	/**
-	 * @param nombre the nombre to set
+	 * Recibe un nombre y lo guarda como el nombre del usuario.
+	 * @param nombre
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	
 	/**
-	 * @return the fechaDeCreacion
+	 * Devuelve la fecha de creacion del usuario.
+	 * @return Fecha de creacion.
 	 */
 	public Date getFechaDeCreacion() {
 		return fechaDeCreacion;
 	}
 	
 	/**
-	 * @param fechaDeCreacion the fechaDeCreacion to set
+	 * Recibe como parametro una fecha y la guarda como fecha de creacion del usuario.
+	 * @param fechaDeCreacion
 	 */
 	public void setFechaDeCreacion(Date fechaDeCreacion) {
 		this.fechaDeCreacion = fechaDeCreacion;
 	}
 	
 	/**
-	 * @return the traducciones
+	 * Devuelve las traducciones aportadas por el usuario.
+	 * @return Coleccion de Traducciones.
 	 */
 	public Collection<Traduccion> getTraducciones() {
 		return traducciones;
 	}
 	
 	/**
-	 * @return the cursadasRealizadas
+	 * Devuelve las cursadas que el usuario realizo en el sitio.
+	 * @return Coleccion de cursadas.
 	 */
 	public Collection<Cursada> getCursadasRealizadas() {
 		return cursadasRealizadas;
 	}
 	
+	/**
+	 * Recibe una cursada y la agrega a las cursadas que el usuario realizo.
+	 * @param cursada
+	 */
 	public void agregarCursada(Cursada cursada) {
 		this.getCursadasRealizadas().add(cursada);
 	}
 
+	/**
+	 * Recibe una traduccion y la agrega a las traducciones aportadas por el usuario.
+	 * @param traduccion
+	 */
 	public void agregarTraduccion(Traduccion traduccion) {
 		this.getTraducciones().add(traduccion);
 	}
 	
+	/**
+	 * Recibe como parametro un idioma y retorna el nivel del usuario para el idioma
+	 * solicitado. Para ello, verifica todos los cursos realizados por el usuario y retorna
+	 * el nivel del curso mas avanzado aprobado por el usuario.
+	 * @param idioma
+	 * @return Nivel del usuario para el idioma dado.
+	 */
 	public int nivel(Idioma idioma) {
 		Iterator<Cursada> cursadas = this.getCursadasRealizadas().iterator();
 		Cursada cursada;
@@ -111,6 +136,12 @@ public class Usuario {
 		return nivel;
 	}
 	
+	/**
+	 * Dado un idioma, devuelve una coleccion con todas las cursadas aprobadas por el usuario
+	 * para el idioma solicitado.
+	 * @param idioma
+	 * @return Coleccion de cursadas.
+	 */
 	public Collection<Cursada> cursadasAprobadas(Idioma idioma) {
 		Iterator<Cursada> cursadas = this.getCursadasRealizadas().iterator();
 		Collection<Cursada> cursadasAprobadas = new ArrayList<Cursada>();

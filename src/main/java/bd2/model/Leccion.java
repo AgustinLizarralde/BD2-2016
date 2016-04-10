@@ -1,13 +1,13 @@
 package bd2.model;
 
 /**
- * Es una lección tomada por un usuario en el marco de un curso.
+ * Representa una leccion tomada por un usuario en el marco de un curso.
  * @author Leandro Di Tommaso
  */
 public class Leccion {
 	
 	/**
-	 * Crea una lección con el nombre indicado.
+	 * Crea una leccion con el nombre indicado.
 	 * @param nombre
 	 */
 	public Leccion(String nombre) {
@@ -18,14 +18,16 @@ public class Leccion {
 	private String nombre;
 
 	/**
-	 * @return El nombre de la lección.
+	 * Devuelve el nombre de la leccion.
+	 * @return Nombre de la leccion.
 	 */
 	public String getNombre() {
 		return nombre;
 	}
 
 	/**
-	 * @param Recibe el nombre que tendrá la lección.
+	 * Cambia el nombre de la leccion por el enviado por parametro.
+	 * @param nombre
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;

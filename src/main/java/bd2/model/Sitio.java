@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * @author leandro
- *
+ * Modela la plataforma de aprendizaje de idiomas.
+ * @author Leandro Di Tommaso
  */
 public class Sitio {
 	
@@ -27,42 +27,48 @@ public class Sitio {
 	private Collection<Usuario> usuarios;
 	
 	/**
-	 * @return the cursos
+	 * Devuelve los cursos disponibles en la plataforma web.
+	 * @return Coleccion de Cursos.
 	 */
 	public Collection<Curso> getCursos() {
 		return cursos;
 	}
 	
 	/**
-	 * @return the documentos
+	 * Devuelve los documentos presentes en el sitio.
+	 * @return Coleccion de Documentos.
 	 */
 	public Collection<Documento> getDocumentos() {
 		return documentos;
 	}
 	
 	/**
-	 * @return the usuarios
+	 * Permite obtener los usuarios del sitio web.
+	 * @return Coleccion de Usuarios.
 	 */
 	public Collection<Usuario> getUsuarios() {
 		return usuarios;
 	}
 
 	/**
-	 * @params Usuario
+	 * Registra un nuevo usuario en el sitio web.
+	 * @param usuario
 	 */
 	public void registrarUsuario(Usuario usuario) {
 		this.getUsuarios().add(usuario);
 	}
 	
 	/**
-	 * @params Curso
+	 * Agrega un curso a la plataforma.
+	 * @param curso
 	 */
 	public void agregarCurso(Curso curso) {
 		this.getCursos().add(curso);
 	}
 	
 	/**
-	 * @params Documento
+	 * Agrega un documento al sitio.
+	 * @param documento
 	 */
 	public void agregarDocumento(Documento documento) {
 		this.getDocumentos().add(documento);

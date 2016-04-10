@@ -1,6 +1,3 @@
-/**
- * 
- */
 package bd2.model;
 
 import java.util.ArrayList;
@@ -9,8 +6,10 @@ import java.util.Date;
 import java.util.Iterator;
 
 /**
- * @author leandro
- *
+ * La cursada esta asociada directamente a un usuario y registra el rendimiento del
+ * usuario en el curso que se dicta en la cursada. La misma tiene las pruebas que
+ * el usuario rinde como parte de su aprendizaje, con el resultado de cada una.
+ * @author Leandro Di Tommaso
  */
 public class Cursada {
 	
@@ -34,54 +33,66 @@ public class Cursada {
 	private Collection<Prueba> pruebas = new ArrayList<Prueba>();
 	
 	/**
-	 * @return the inicio
+	 * Devuelve la fecha de inicio de la cursada.
+	 * @return Fecha de inicio.
 	 */
 	public Date getInicio() {
 		return inicio;
 	}
 	
 	/**
-	 * @param inicio the inicio to set
+	 * Guarda la fecha de inicio de la cursada.
+	 * @param inicio
 	 */
 	public void setInicio(Date inicio) {
 		this.inicio = inicio;
 	}
 	
 	/**
-	 * @return the curso
+	 * Devuelve el curso asociado a la cursada.
+	 * @return Curso.
 	 */
 	public Curso getCurso() {
 		return curso;
 	}
 	
 	/**
-	 * @param curso the curso to set
+	 * Asocia a la Cursada con un Curso.
+	 * @param curso
 	 */
 	public void setCurso(Curso curso) {
 		this.curso = curso;
 	}
 	
 	/**
-	 * @return the pruebas
+	 * Devuelve las pruebas de la cursada.
+	 * @return Coleccion de Pruebas.
 	 */
 	public Collection<Prueba> getPruebas() {
 		return pruebas;
 	}
 	
 	/**
-	 * @return the usuario
+	 * Devuelve el usuario que atiende la cursada.
+	 * @return Usuario
 	 */
 	public Usuario getUsuario() {
 		return usuario;
 	}
 	
 	/**
-	 * @param usuario the usuario to set
+	 * Registra el usuario que hara la cursada.
+	 * @param usuario
 	 */
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
 	
+	/**
+	 * Se entiende que una cursada esta finalizada cuando el usuario aprobo al menos
+	 * una prueba de cada una de las lecciones del curso.
+	 * @return Boolean indicando si la cursada esta finalizada o no.
+	 */
 	public Boolean finalizada() {
 		Iterator<Leccion> lecciones = this.getCurso().getLecciones().iterator();
 		Leccion leccion;
@@ -93,10 +104,19 @@ public class Cursada {
 		return true;
 	}
 	
+	/**
+	 * Permite agregar una prueba a la cursada.
+	 * @param prueba
+	 */
 	public void agregarPrueba(Prueba prueba) {
 		this.getPruebas().add(prueba);
 	}
 	
+	/**
+	 * Devuelve todas las lecciones aprobadas por el usuario en el contexto
+	 * de la cursada en ejecucion.
+	 * @return Coleccion de Lecciones.
+	 */
 	public Collection<Leccion> leccionesAprobadas() {
 		Prueba prueba;
 		Iterator<Prueba> pruebas = this.getPruebas().iterator();
@@ -111,10 +131,19 @@ public class Cursada {
 		return leccionesAprobadas;
 	}
 	
+	/**
+	 * El nivel del curso establece una forma de medir la dificultad del mismo.
+	 * De esta forma, cuanto mas alto sea el numero del nivel, mas avanzado sera el mismo.
+	 * @return Nivel del curso.
+	 */
 	public Integer getNivel() {
 		return this.getCurso().getNivel();
 	}
 	
+	/**
+	 * Devuelve el idioma que se aprende en el curso.
+	 * @return Idioma.
+	 */
 	public Idioma getIdioma() {
 		return this.getCurso().getIdioma();
 	}
