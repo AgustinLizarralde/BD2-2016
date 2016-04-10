@@ -7,6 +7,7 @@ import java.util.Date;
  *
  */
 public abstract class Tarea {
+	
 	protected Date fecha;
 	protected String descripcion;
 	protected Boolean completa = false;

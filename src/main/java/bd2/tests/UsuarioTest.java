@@ -86,6 +86,7 @@ public class UsuarioTest extends TestCase {
 	public void testNivel() {
 		assertEquals(sven.nivel(ingles), 0);
 		cursadaInglesNivel1.agregarPrueba(vocabularioBasicoAprobada);
+		sven.nivel(ingles);
 		assertEquals(sven.nivel(ingles), 1);
 
 		cursadaInglesNivel6 = new Cursada(cursoInglesNivel6, hace1Anho, sven);

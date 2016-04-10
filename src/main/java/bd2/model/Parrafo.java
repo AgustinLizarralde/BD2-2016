@@ -5,7 +5,8 @@ package bd2.model;
  *
  */
 public class Parrafo {
-	public String texto;
+	
+	private String texto;
 	private Documento documento;
 	
 	public Parrafo(String texto, Documento documento) {
@@ -48,5 +49,6 @@ public class Parrafo {
 	public Idioma getIdioma() {
 		return this.documento.getIdioma();
 	}
+	
 	
 }

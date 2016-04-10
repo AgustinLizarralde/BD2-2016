@@ -8,7 +8,7 @@ import java.util.Map;
  *
  */
 public class Diccionario {
-	public Map<String,String> diccionario = new HashMap<String, String>();
+	public Map<String,String> definiciones = new HashMap<String, String>();
 	public String edicion;
 	public Idioma idioma;
 	
@@ -34,7 +34,7 @@ public class Diccionario {
 	 * @param definicion definicion de la palabra
 	 */
 	public void agregarDefinicion(String palabra, String definicion){
-		this.diccionario.put(palabra, definicion);
+		this.definiciones.put(palabra, definicion);
 	}
 	
 	/**
@@ -42,7 +42,7 @@ public class Diccionario {
 	 * @param palabra dalabra a buscar definicion
 	 */
 	public String definicion(String palabra) {
-		return this.diccionario.get(palabra);
+		return this.definiciones.get(palabra);
 	}
 	
 	/**
@@ -67,17 +67,10 @@ public class Diccionario {
 	}
 
 	/**
-	 * @param idioma el idioma del diccionario
-	 */
-	public void setIdioma(Idioma idioma) {
-		this.idioma = idioma;
-	}
-	
-	/**
 	 * @return Coleccion de definiciones como un Map<String, String>
 	 */
 	public Map<String,String> getDefiniciones() {
-		return this.diccionario;
+		return this.definiciones;
 	}
 
 }
