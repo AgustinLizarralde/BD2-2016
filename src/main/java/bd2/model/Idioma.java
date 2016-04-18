@@ -6,6 +6,7 @@ package bd2.model;
  * 
  */
 public class Idioma {
+	private long id;
 	private String nombre;
 	private Diccionario diccionario;
 	
@@ -46,6 +47,20 @@ public class Idioma {
 	 */
 	public void setDiccionario(Diccionario diccionario) {
 		this.diccionario = diccionario;
+	}
+
+	/**
+	 * @return el identificador de la instancia de la clase
+	 */
+	public long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id el identificador de la instancia de la clase
+	 */
+	public void setId(long id) {
+		this.id = id;
 	}
 	
 }

@@ -8,11 +8,16 @@ import java.util.LinkedList;
  *
  */
 public class Documento {
+	private long id;
 	private Collection<Parrafo> parrafos = new LinkedList<Parrafo>();
 	private Idioma idioma;
 	private String nombre;
 	private Integer complejidad;
 	
+	protected Documento() {
+		super();
+	}
+
 	public Documento(String nombre, Idioma idioma) {
 		super();
 		this.idioma = idioma;
@@ -85,5 +90,26 @@ public class Documento {
 		Parrafo parrafo = new Parrafo(texto, this);
 		this.parrafos.add(parrafo);
 		return parrafo;
+	}
+
+	/**
+	 * @param parrafos coleccion de parrafos
+	 */
+	public void setParrafos(Collection<Parrafo> parrafos) {
+		this.parrafos = parrafos;
+	}
+	
+	/**
+	 * @return el identificador de la instancia de la clase
+	 */
+	public long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id el identificador de la instancia de la clase
+	 */
+	public void setId(long id) {
+		this.id = id;
 	}
 }

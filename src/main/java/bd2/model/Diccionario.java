@@ -8,9 +8,10 @@ import java.util.Map;
  *
  */
 public class Diccionario {
-	public Map<String,String> definiciones = new HashMap<String, String>();
-	public String edicion;
-	public Idioma idioma;
+	private long id;
+	private Map<String,String> definiciones = new HashMap<String, String>();
+	private String edicion;
+	private Idioma idioma;
 	
 	
 	public Diccionario() {
@@ -71,6 +72,34 @@ public class Diccionario {
 	 */
 	public Map<String,String> getDefiniciones() {
 		return this.definiciones;
+	}
+
+	/**
+	 * @param definiciones conjunto de definiciones del diccionario
+	 */
+	public void setDefiniciones(Map<String, String> definiciones) {
+		this.definiciones = definiciones;
+	}
+
+	/**
+	 * @param idioma el idioma del documento
+	 */
+	public void setIdioma(Idioma idioma) {
+		this.idioma = idioma;
+	}
+
+	/**
+	 * @return el identificador de la instancia de la clase
+	 */
+	public long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id el identificador de la instancia de la clase
+	 */
+	public void setId(long id) {
+		this.id = id;
 	}
 
 }

@@ -15,12 +15,16 @@
 		<property name="hibernate.connection.username">Grupo18</property>
 		<property name="hibernate.connection.password">Grupo18</property>
 		
-		<property name="hibernate.show_sql">false</property>
+		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.format_sql">
 			true
 		</property>
 
 		<!-- Colocar las referencias a los archivos de mapping en este punto -->
+		<mapping resource="hibernate/diccionario.hbm.xml"/>
+		<mapping resource="hibernate/idioma.hbm.xml"/>
+		<mapping resource="hibernate/parrafo.hbm.xml"/>
+		<mapping resource="hibernate/documento.hbm.xml"/> 
 
 	</session-factory>
 </hibernate-configuration>
