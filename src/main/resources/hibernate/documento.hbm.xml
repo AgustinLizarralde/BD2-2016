@@ -17,7 +17,7 @@
         	not-null="true"
 		/>
         
-        <list name="parrafos_documento" cascade="all">
+        <list name="parrafos" cascade="all">
 			<key column="id_documento"/>
 			<list-index column="list_index_parrafo_documento"/>
 			<one-to-many class="Parrafo"/>
