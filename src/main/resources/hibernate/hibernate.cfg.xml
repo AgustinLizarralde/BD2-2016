@@ -25,6 +25,7 @@
 		<mapping resource="hibernate/idioma.hbm.xml"/>
 		<mapping resource="hibernate/parrafo.hbm.xml"/>
 		<mapping resource="hibernate/documento.hbm.xml"/> 
+		<mapping resource="hibernate/tarea.hbm.xml"/> 
 
 	</session-factory>
 </hibernate-configuration>

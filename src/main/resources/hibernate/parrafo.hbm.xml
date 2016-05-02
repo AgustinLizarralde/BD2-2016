@@ -10,5 +10,11 @@
 		
 		<property name="texto" column="texto" type="text"/>
 		
+		<many-to-one 
+			name="documento"
+			column="id_documento"
+			not-null="true"
+		/>
+		
 	</class>
 </hibernate-mapping>

@@ -7,7 +7,7 @@ import java.util.Date;
  *
  */
 public abstract class Tarea {
-	
+	protected long id;
 	protected Date fecha;
 	protected String descripcion;
 	protected Boolean completa = false;
@@ -70,5 +70,19 @@ public abstract class Tarea {
 	 */
 	public void setCompleta(Boolean completa) {
 		this.completa = completa;
+	}
+
+	/**
+	 * @return el identificador de la instancia de la clase
+	 */
+	public long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id el identificador de la instancia de la clase
+	 */
+	public void setId(long id) {
+		this.id = id;
 	}
 }

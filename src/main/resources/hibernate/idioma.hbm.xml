@@ -14,6 +14,7 @@
 			name="diccionario" 
         	column="id_diccionario" 
         	unique="true"
+			not-null="true"
         	cascade="all"
 		/>
 		

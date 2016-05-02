@@ -16,7 +16,8 @@
         	unique="true"
         	not-null="true"
 		/>
-        
+        <one-to-one name="Idioma" property-ref="diccionario" />
+		
         <map name="definiciones"  table="diccionario_definiciones">
 			<key column="id_definicion"/>
 			<index column="palabra" type="string" />
