@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
 
 <hibernate-mapping package="bd2.model">
 	<class name="Diccionario" table="diccionario">
@@ -9,20 +9,15 @@
 		</id>
 		
 		<property name="edicion" column="edicion" type="string"/>
+        
+		<one-to-one name="idioma" property-ref="id" class="Idioma"></one-to-one>
 		
-		<many-to-one 
-			name="idioma" 
-        	column="id_idioma" 
-        	unique="true"
-        	not-null="true"
-		/>
-        <one-to-one name="Idioma" property-ref="diccionario" />
-		
-        <map name="definiciones"  table="diccionario_definiciones">
-			<key column="id_definicion"/>
+        <map name="definiciones" table="diccionario_definiciones">
+			<key column="id_diccionario"/>
 			<index column="palabra" type="string" />
 			<element column="definicion" type="string" />
 		</map>
 		
 	</class>
+	
 </hibernate-mapping>
