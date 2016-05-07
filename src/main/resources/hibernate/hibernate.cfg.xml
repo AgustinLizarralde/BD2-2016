@@ -11,9 +11,9 @@
 			com.mysql.jdbc.Driver
 		</property>
 
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Grupo18</property>
-		<property name="hibernate.connection.username">Grupo18</property>
-		<property name="hibernate.connection.password">Grupo18</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/grupo18</property>
+		<property name="hibernate.connection.username">grupo18</property>
+		<property name="hibernate.connection.password">grupo18</property>
 		
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.format_sql">
@@ -21,11 +21,14 @@
 		</property>
 
 		<!-- Colocar las referencias a los archivos de mapping en este punto -->
-		<mapping resource="hibernate/diccionario.hbm.xml"/>
+		<mapping resource="hibernate/diccionario.hbm.xml"/> 
 		<mapping resource="hibernate/idioma.hbm.xml"/>
 		<mapping resource="hibernate/parrafo.hbm.xml"/>
-		<mapping resource="hibernate/documento.hbm.xml"/> 
-		<mapping resource="hibernate/tarea.hbm.xml"/> 
+		<mapping resource="hibernate/documento.hbm.xml"/>
+		<mapping resource="hibernate/leccion.hbm.xml"/> 
+		<mapping resource="hibernate/curso.hbm.xml"/>
+		<mapping resource="hibernate/tarea.hbm.xml"/>
+		
 
 	</session-factory>
 </hibernate-configuration>

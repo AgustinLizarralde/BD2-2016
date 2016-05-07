@@ -15,6 +15,7 @@ public class Leccion {
 		this.nombre = nombre;
 	}
 
+	private long id;
 	private String nombre;
 
 	/**
@@ -31,6 +32,14 @@ public class Leccion {
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 	
 }

@@ -29,6 +29,7 @@ public class Curso {
 		this.lecciones = new ArrayList<Leccion>();
 	}
 
+	private long id;
 	private String nombre;
 	private Integer nivel;
 	private Idioma idioma;
@@ -97,6 +98,22 @@ public class Curso {
 	 */
 	public void agregarLeccion(Leccion leccion) {
 		this.lecciones.add(leccion);
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	/**
+	 * Guarda las lecciones.
+	 * @param lecciones the lecciones to set
+	 */
+	public void setLecciones(Collection<Leccion> lecciones) {
+		this.lecciones = lecciones;
 	}
 
 }
