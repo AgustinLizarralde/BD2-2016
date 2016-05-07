@@ -22,6 +22,7 @@ public class Sitio {
 		this.usuarios = new ArrayList<Usuario>();
 	}
 	
+	private long id;
 	private Collection<Curso> cursos;
 	private Collection<Documento> documentos;
 	private Collection<Usuario> usuarios;
@@ -72,6 +73,35 @@ public class Sitio {
 	 */
 	public void agregarDocumento(Documento documento) {
 		this.getDocumentos().add(documento);
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	/**
+	 * @param cursos the cursos to set
+	 */
+	public void setCursos(Collection<Curso> cursos) {
+		this.cursos = cursos;
+	}
+
+	/**
+	 * @param documentos the documentos to set
+	 */
+	public void setDocumentos(Collection<Documento> documentos) {
+		this.documentos = documentos;
+	}
+
+	/**
+	 * @param usuarios the usuarios to set
+	 */
+	public void setUsuarios(Collection<Usuario> usuarios) {
+		this.usuarios = usuarios;
 	}
 	
 }

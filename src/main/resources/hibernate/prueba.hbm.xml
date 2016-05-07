@@ -3,21 +3,21 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
 
 <hibernate-mapping package="bd2.model">
-	<class name="Idioma" table="idioma">
-		<id name="id" column="id_idioma">
+	<class name="Prueba" table="prueba">
+		<id name="id" column="id_prueba">
 			<generator class="native"/>
 		</id>
 		
-		<property name="nombre" column="nombre" type="string"/>
-		
+		<property name="puntaje"/>
+        
 		<many-to-one
-			name="diccionario"
-			class="Diccionario"
+			name="leccion"
+			column="id_leccion"
 			cascade="all"
-			column="id_diccionario"
 			unique="true"
-			not-null="true"
-		/>
+			class="Leccion">
+		</many-to-one>
 		
 	</class>
+	
 </hibernate-mapping>

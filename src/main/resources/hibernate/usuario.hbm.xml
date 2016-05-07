@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping package="bd2.model">
+	<class name="Usuario" table="usuario">
+		<id name="id" column="id_usuario">
+			<generator class="native"/>
+		</id>
+		
+		<property name="email"/>
+		<property name="nombre"/>
+		<property name="fechaDeCreacion" column="fecha_de_creacion"/>
+		
+		<list name="cursadasRealizadas" cascade="all">
+			<key column="id_usuario" not-null="false"/>
+			<list-index column="id_cursada"/>
+			<one-to-many class="Cursada"/>
+		</list>
+		
+		<list name="traducciones" cascade="all">
+			<key column="id_usuario"/>
+			<list-index column="id_traduccion"/>
+			<one-to-many class="Traduccion"/>
+		</list>
+		
+		<joined-subclass name="Moderador" table="moderador">
+			<key column="id_moderador"/>
+			<list name="idiomas" cascade="all">
+				<key column="id_moderador"/>
+				<list-index column="id_moderador_idioma"/>
+				<one-to-many class="Idioma"/>
+			</list>
+			
+			<list name="evaluaciones" cascade="all">
+				<key column="id_moderador"/>
+				<list-index column="id_evaluacion"/>
+				<one-to-many class="Evaluacion"/>
+			</list>
+		</joined-subclass>
+		
+	</class>
+	
+</hibernate-mapping>

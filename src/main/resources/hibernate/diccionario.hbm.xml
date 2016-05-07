@@ -10,11 +10,15 @@
 		
 		<property name="edicion" column="edicion" type="string"/>
         
-		<one-to-one name="idioma" property-ref="id" class="Idioma"></one-to-one>
+		<one-to-one
+			name="idioma"
+			property-ref="id"
+			class="Idioma">
+		</one-to-one>
 		
         <map name="definiciones" table="diccionario_definiciones">
 			<key column="id_diccionario"/>
-			<index column="palabra" type="string" />
+			<map-key column="palabra" type="string" />
 			<element column="definicion" type="string" />
 		</map>
 		

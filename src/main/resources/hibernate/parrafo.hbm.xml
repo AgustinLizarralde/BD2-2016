@@ -13,8 +13,8 @@
 		<many-to-one 
 			name="documento"
 			column="id_documento"
-			not-null="true"
+			unique="false"
+			cascade="all"
 		/>
-		
 	</class>
 </hibernate-mapping>

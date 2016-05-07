@@ -30,6 +30,7 @@ public class Usuario {
 		this.cursadasRealizadas = new ArrayList<Cursada>();
 	}
 	
+	private long id;
 	private String email;
 	private String nombre;
 	private Date fechaDeCreacion;
@@ -155,6 +156,28 @@ public class Usuario {
 			}
 		}		
 		return cursadasAprobadas;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	/**
+	 * @param traducciones the traducciones to set
+	 */
+	public void setTraducciones(Collection<Traduccion> traducciones) {
+		this.traducciones = traducciones;
+	}
+
+	/**
+	 * @param cursadasRealizadas the cursadasRealizadas to set
+	 */
+	public void setCursadasRealizadas(Collection<Cursada> cursadasRealizadas) {
+		this.cursadasRealizadas = cursadasRealizadas;
 	}
 	
 }

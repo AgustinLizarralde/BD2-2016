@@ -27,6 +27,7 @@ public class Cursada {
 		usuario.agregarCursada(this);
 	}
 
+	private long id;
 	private Date inicio;
 	private Curso curso;
 	private Usuario usuario;
@@ -146,6 +147,21 @@ public class Cursada {
 	 */
 	public Idioma getIdioma() {
 		return this.getCurso().getIdioma();
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	/**
+	 * @param pruebas the pruebas to set
+	 */
+	public void setPruebas(Collection<Prueba> pruebas) {
+		this.pruebas = pruebas;
 	}
 	
 }

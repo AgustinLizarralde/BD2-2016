@@ -18,6 +18,7 @@ public class Prueba {
 		this.setPuntaje(puntaje);
 	}
 
+	private long id;
 	private Leccion leccion;
 	private Integer puntaje;
 	
@@ -72,6 +73,14 @@ public class Prueba {
 	 */
 	public Boolean aprobada() {
 		return this.getPuntaje() >= 60;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 }
