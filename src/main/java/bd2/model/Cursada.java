@@ -27,7 +27,7 @@ public class Cursada {
 		usuario.agregarCursada(this);
 	}
 
-	private long id;
+	private Long id;
 	private Date inicio;
 	private Curso curso;
 	private Usuario usuario;
@@ -149,11 +149,11 @@ public class Cursada {
 		return this.getCurso().getIdioma();
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

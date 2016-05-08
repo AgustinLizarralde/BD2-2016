@@ -14,6 +14,9 @@ import java.util.Iterator;
  */
 public class Usuario {
 	
+	public Usuario() {
+		super();
+	}
 	/**
 	 * Crea un usuario con el email, el nombre y la fecha de creacion recibidos como
 	 * parametro.
@@ -30,7 +33,7 @@ public class Usuario {
 		this.cursadasRealizadas = new ArrayList<Cursada>();
 	}
 	
-	private long id;
+	private Long id;
 	private String email;
 	private String nombre;
 	private Date fechaDeCreacion;
@@ -158,11 +161,11 @@ public class Usuario {
 		return cursadasAprobadas;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

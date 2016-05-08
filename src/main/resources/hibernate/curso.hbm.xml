@@ -21,7 +21,7 @@
 		
 		<list name="lecciones" cascade="all">
 			<key column="id_curso"/>
-			<list-index column="id_leccion"/>
+			<list-index column="id_curso_leccion"/>
 			<one-to-many class="Leccion"/>
 		</list>
 		

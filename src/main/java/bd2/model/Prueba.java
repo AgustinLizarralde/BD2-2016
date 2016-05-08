@@ -7,6 +7,9 @@ package bd2.model;
  */
 public class Prueba {
 	
+	public Prueba() {
+		super();
+	}
 	/**
 	 * Crea un objeto Prueba con una leccion y un puntaje.
 	 * @param leccion
@@ -18,7 +21,7 @@ public class Prueba {
 		this.setPuntaje(puntaje);
 	}
 
-	private long id;
+	private Long id;
 	private Leccion leccion;
 	private Integer puntaje;
 	
@@ -75,11 +78,11 @@ public class Prueba {
 		return this.getPuntaje() >= 60;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

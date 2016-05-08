@@ -28,7 +28,7 @@
 		
 		<list name="pruebas" cascade="all">
 			<key column="id_cursada"/>
-			<list-index column="id_prueba"/>
+			<list-index column="id_cursada_prueba"/>
 			<one-to-many class="Prueba"/>
 		</list>
 		

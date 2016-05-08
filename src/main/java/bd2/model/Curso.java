@@ -14,6 +14,10 @@ import java.util.Collection;
  */
 public class Curso {
 	
+	public Curso() {
+		super();
+	}
+	
 	/**
 	 * Crea un curso con un nombre, un idioma y un nivel, en base a los parametros
 	 * recibidos.
@@ -29,7 +33,7 @@ public class Curso {
 		this.lecciones = new ArrayList<Leccion>();
 	}
 
-	private long id;
+	private Long id;
 	private String nombre;
 	private Integer nivel;
 	private Idioma idioma;
@@ -100,11 +104,11 @@ public class Curso {
 		this.lecciones.add(leccion);
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

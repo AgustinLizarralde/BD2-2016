@@ -10,6 +10,10 @@ public class Evaluacion extends Tarea {
 	private int puntaje;
 	private Traduccion traduccion;
 	
+	public Evaluacion() {
+		super();
+	}
+	
 	public Evaluacion(Date fecha, String descripcion, Boolean completado, Traduccion traduccion, int puntaje) {
 		super(fecha, descripcion, completado);
 		this.puntaje = puntaje;

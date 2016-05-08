@@ -22,7 +22,14 @@ public class Sitio {
 		this.usuarios = new ArrayList<Usuario>();
 	}
 	
-	private long id;
+	public Sitio(Collection<Documento> documentos, Collection<Usuario> usuarios, Collection<Curso> cursos) {
+		super();
+		this.documentos = documentos;
+		this.usuarios = usuarios;
+		this.cursos = cursos;
+	}
+	
+	private Long id;
 	private Collection<Curso> cursos;
 	private Collection<Documento> documentos;
 	private Collection<Usuario> usuarios;
@@ -75,11 +82,11 @@ public class Sitio {
 		this.getDocumentos().add(documento);
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

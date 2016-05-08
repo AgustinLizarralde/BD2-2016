@@ -6,6 +6,10 @@ package bd2.model;
  */
 public class Leccion {
 	
+	public Leccion() {
+		super();
+	}
+	
 	/**
 	 * Crea una leccion con el nombre indicado.
 	 * @param nombre
@@ -15,7 +19,7 @@ public class Leccion {
 		this.nombre = nombre;
 	}
 
-	private long id;
+	private Long id;
 	private String nombre;
 
 	/**
@@ -34,11 +38,11 @@ public class Leccion {
 		this.nombre = nombre;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	

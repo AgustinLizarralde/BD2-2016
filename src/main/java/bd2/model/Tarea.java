@@ -7,11 +7,14 @@ import java.util.Date;
  *
  */
 public abstract class Tarea {
-	protected long id;
+	protected Long id;
 	protected Date fecha;
 	protected String descripcion;
 	protected Boolean completa = false;
 	
+	public Tarea() {
+		super();
+	}
 	
 	/**
 	 * constructor de una tarea, debe ser llamado por sus hijos
@@ -75,14 +78,14 @@ public abstract class Tarea {
 	/**
 	 * @return el identificador de la instancia de la clase
 	 */
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
 	/**
 	 * @param id el identificador de la instancia de la clase
 	 */
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 }

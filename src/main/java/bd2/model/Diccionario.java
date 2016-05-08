@@ -8,7 +8,7 @@ import java.util.Map;
  *
  */
 public class Diccionario {
-	private long id;
+	private Long id;
 	private Map<String,String> definiciones = new HashMap<String, String>();
 	private String edicion;
 	private Idioma idioma;
@@ -91,14 +91,14 @@ public class Diccionario {
 	/**
 	 * @return el identificador de la instancia de la clase
 	 */
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
 	/**
 	 * @param id el identificador de la instancia de la clase
 	 */
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

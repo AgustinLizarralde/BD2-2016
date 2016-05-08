@@ -5,11 +5,11 @@ package bd2.model;
  *
  */
 public class Parrafo {
-	private long id;
+	private Long id;
 	private String texto;
 	private Documento documento;
 	
-	protected Parrafo() {
+	public Parrafo() {
 		super();
 	}
 
@@ -57,14 +57,14 @@ public class Parrafo {
 	/**
 	 * @return el identificador de la instancia de la clase
 	 */
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
 	/**
 	 * @param id el identificador de la instancia de la clase
 	 */
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	

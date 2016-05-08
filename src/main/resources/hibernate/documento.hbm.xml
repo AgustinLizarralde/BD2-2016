@@ -19,7 +19,7 @@
         
         <list name="parrafos" cascade="all">
 			<key column="id_documento"/>
-			<list-index column="id_parrafo"/>
+			<list-index column="id_documento_leccion"/>
 			<one-to-many class="Parrafo"/>
 		</list>
 		

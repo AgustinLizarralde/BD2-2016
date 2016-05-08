@@ -1,15 +1,15 @@
 package bd2.model;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedList;
 
 /**
  * Un documento tiene un idioma y esta compuesto por parrafos
  *
  */
 public class Documento {
-	private long id;
-	private Collection<Parrafo> parrafos = new LinkedList<Parrafo>();
+	private Long id;
+	private Collection<Parrafo> parrafos = new ArrayList<Parrafo>();
 	private Idioma idioma;
 	private String nombre;
 	private Integer complejidad;
@@ -102,14 +102,14 @@ public class Documento {
 	/**
 	 * @return el identificador de la instancia de la clase
 	 */
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
 	/**
 	 * @param id el identificador de la instancia de la clase
 	 */
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 }

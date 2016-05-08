@@ -14,13 +14,13 @@
 		
 		<list name="cursadasRealizadas" cascade="all">
 			<key column="id_usuario" not-null="false"/>
-			<list-index column="id_cursada"/>
+			<list-index column="id_usuario_cursada"/>
 			<one-to-many class="Cursada"/>
 		</list>
 		
 		<list name="traducciones" cascade="all">
 			<key column="id_usuario"/>
-			<list-index column="id_traduccion"/>
+			<list-index column="id_usuario_traduccion"/>
 			<one-to-many class="Traduccion"/>
 		</list>
 		
@@ -34,7 +34,7 @@
 			
 			<list name="evaluaciones" cascade="all">
 				<key column="id_moderador"/>
-				<list-index column="id_evaluacion"/>
+				<list-index column="id_moderador_evaluacion"/>
 				<one-to-many class="Evaluacion"/>
 			</list>
 		</joined-subclass>
