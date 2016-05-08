@@ -20,17 +20,7 @@
 			true
 		</property>
 
-		<mapping resource="hibernate/leccion.hbm.xml"/>
-		<mapping resource="hibernate/idioma.hbm.xml"/>
-		<mapping resource="hibernate/diccionario.hbm.xml"/>
-		<mapping resource="hibernate/prueba.hbm.xml"/>
-		<mapping resource="hibernate/curso.hbm.xml"/> 
-		<mapping resource="hibernate/parrafo.hbm.xml"/>
-		<mapping resource="hibernate/documento.hbm.xml"/>
-		<mapping resource="hibernate/tarea.hbm.xml"/>
-		<mapping resource="hibernate/cursada.hbm.xml"/>
-		<mapping resource="hibernate/usuario.hbm.xml"/>
-		<mapping resource="hibernate/sitio.hbm.xml"/>
+		<mapping resource="hibernate/mappings.hbm.xml"/>
 
 	</session-factory>
 </hibernate-configuration>

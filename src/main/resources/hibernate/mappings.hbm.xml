@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping package="bd2.model">
+    <class name="Cursada" table="cursada">
+		<id name="id" column="id_cursada">
+			<generator class="native"/>
+		</id>
+		
+		<property name="inicio"/>
+        
+		<many-to-one
+			name="usuario"
+			column="id_usuario"
+			cascade="all"
+			unique="true"
+			class="Usuario">
+		</many-to-one>
+		
+		<many-to-one
+			name="curso"
+			column="id_curso"
+			cascade="all"
+			unique="true"
+			class="Curso">
+		</many-to-one>
+		
+		<list name="pruebas" cascade="all">
+			<key column="id_cursada"/>
+			<list-index column="id_cursada_prueba"/>
+			<one-to-many class="Prueba"/>
+		</list>
+		
+	</class>
+	
+    <class name="Curso" table="curso">
+		<id name="id" column="id_curso">
+			<generator class="native"/>
+		</id>
+		
+		<property name="nombre"/>
+		<property name="nivel"/>
+        
+		<many-to-one
+			name="idioma"
+			column="id_idioma"
+			unique="true"
+			cascade="all"
+			class="Idioma">
+		</many-to-one>
+		
+		<list name="lecciones" cascade="all">
+			<key column="id_curso"/>
+			<list-index column="id_curso_leccion"/>
+			<one-to-many class="Leccion"/>
+		</list>
+		
+	</class>
+	
+    <class name="Diccionario" table="diccionario">
+		<id name="id" column="id_diccionario">
+			<generator class="native"/>
+		</id>
+		
+		<property name="edicion" column="edicion" type="string"/>
+        
+		<one-to-one
+			name="idioma"
+			property-ref="id"
+			class="Idioma">
+		</one-to-one>
+		
+        <map name="definiciones" table="diccionario_definiciones">
+			<key column="id_diccionario"/>
+			<map-key column="palabra" type="string" />
+			<element column="definicion" type="string" />
+		</map>
+		
+	</class>
+	
+    <class name="Documento" table="documento">
+		<id name="id" column="id_documento">
+			<generator class="native"/>
+		</id>
+		
+		<property name="nombre"/>
+		<property name="complejidad"/>
+		<many-to-one 
+			name="idioma" 
+        	column="id_idioma" 
+        	unique="true"
+        	cascade="all"
+		/>
+        
+        <list name="parrafos" cascade="all">
+			<key column="id_documento"/>
+			<list-index column="id_documento_leccion"/>
+			<one-to-many class="Parrafo"/>
+		</list>
+		
+	</class>
+	
+    <class name="Idioma" table="idioma">
+		<id name="id" column="id_idioma">
+			<generator class="native"/>
+		</id>
+		
+		<property name="nombre" column="nombre" type="string"/>
+		
+		<many-to-one
+			name="diccionario"
+			class="Diccionario"
+			cascade="all"
+			column="id_diccionario"
+			unique="true"
+			not-null="true"
+		/>
+		
+	</class>
+	
+    <class name="Leccion" table="leccion">
+		<id name="id" column="id_leccion">
+			<generator class="native"/>
+		</id>
+		
+		<property name="nombre" column="nombre" type="string"/>
+		
+	</class>
+	
+    <class name="Parrafo" table="parrafo">
+		<id name="id" column="id_parrafo">
+			<generator class="native"/>
+		</id>
+		
+		<property name="texto" column="texto" type="text"/>
+		
+		<many-to-one 
+			name="documento"
+			column="id_documento"
+			unique="false"
+			cascade="all"
+		/>
+	</class>
+	
+    <class name="Prueba" table="prueba">
+		<id name="id" column="id_prueba">
+			<generator class="native"/>
+		</id>
+		
+		<property name="puntaje"/>
+        
+		<many-to-one
+			name="leccion"
+			column="id_leccion"
+			cascade="all"
+			unique="true"
+			class="Leccion">
+		</many-to-one>
+		
+	</class>
+	
+    <class name="Sitio" table="sitio">
+		<id name="id" column="id_sitio">
+			<generator class="native"/>
+		</id>
+		
+		<list name="usuarios" cascade="all">
+			<key column="id_sitio"></key>
+			<index column="id_sitio_usuario"></index>
+			<one-to-many class="Usuario"/>
+		</list>
+		
+		<list name="cursos" cascade="all">
+			<key column="id_sitio"></key>
+			<index column="id_sitio_curso"></index>
+			<one-to-many class="Curso"/>
+		</list>
+		
+		<list name="documentos" cascade="all">
+			<key column="id_sitio"></key>
+			<index column="id_sitio_documento"></index>
+			<one-to-many class="Documento"/>
+		</list>		
+	</class>
+	
+    <class name="Tarea" table="tarea">
+		<id name="id" column="id_tarea">
+			<generator class="native"/>
+		</id>
+		
+		<discriminator column="tipo_tarea" type="string"/>
+		
+		<property name="fecha" column="fecha" type="date"/>
+		<property name="descripcion" column="descripcion" type="string"/>
+		<property name="completa" column="completa" type="boolean"/>
+		
+		<subclass name="Traduccion" discriminator-value="T">
+			<property name="texto" column="texto" type="text"/>
+			<many-to-one 
+				name="idioma"
+				column="id_idioma"
+				unique="false"
+				cascade="all"
+			/>
+			
+			<many-to-one 
+				name="parrafo"
+				column="id_parrafo"
+				unique="false"
+				cascade="all"
+			/>
+		</subclass>
+		
+		<subclass name="Evaluacion" discriminator-value="E">
+			<property name="puntaje" column="puntaje" type="integer"/>
+			<many-to-one 
+				name="traduccion"
+				column="id_traduccion"
+				unique="true"
+				cascade="all"
+			/>		 	
+		</subclass>
+		
+	</class>
+	
+    <class name="Usuario" table="usuario">
+		<id name="id" column="id_usuario">
+			<generator class="native"/>
+		</id>
+		
+		<property name="email"/>
+		<property name="nombre"/>
+		<property name="fechaDeCreacion" column="fecha_de_creacion"/>
+		
+		<list name="cursadasRealizadas" cascade="all">
+			<key column="id_usuario" not-null="false"/>
+			<list-index column="id_usuario_cursada"/>
+			<one-to-many class="Cursada"/>
+		</list>
+		
+		<list name="traducciones" cascade="all">
+			<key column="id_usuario"/>
+			<list-index column="id_usuario_traduccion"/>
+			<one-to-many class="Traduccion"/>
+		</list>
+		
+		<joined-subclass name="Moderador" table="moderador">
+			<key column="id_moderador"/>
+			<list name="idiomas" cascade="all">
+				<key column="id_moderador"/>
+				<list-index column="id_moderador_idioma"/>
+				<one-to-many class="Idioma"/>
+			</list>
+			
+			<list name="evaluaciones" cascade="all">
+				<key column="id_moderador"/>
+				<list-index column="id_moderador_evaluacion"/>
+				<one-to-many class="Evaluacion"/>
+			</list>
+		</joined-subclass>
+		
+	</class>
+	
+</hibernate-mapping>
