@@ -13,15 +13,15 @@
         
 		<many-to-one
 			name="idioma"
-			column="id_idioma"
-			unique="true"
-			cascade="all"
-			class="Idioma">
-		</many-to-one>
+			column="id_idioma"			
+			class="Idioma"
+			unique="false"
+			not-null="true"
+			cascade="all"/>
 		
 		<list name="lecciones" cascade="all">
-			<key column="id_curso"/>
-			<list-index column="id_leccion"/>
+			<key column="id_curso" />
+			<list-index column="id_leccion_curso"/>
 			<one-to-many class="Leccion"/>
 		</list>
 		

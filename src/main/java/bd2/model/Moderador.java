@@ -18,6 +18,9 @@ import java.util.Date;
  */
 public class Moderador extends Usuario {
 
+	public Moderador(){
+		super();
+	}
 	/**
 	 * El constructor del moderador recibe como parametro el correo electronico,
 	 * el nombre y la fecha de creacion del mismo, que son los parametros que solicita

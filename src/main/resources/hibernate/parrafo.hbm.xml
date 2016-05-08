@@ -15,6 +15,7 @@
 			column="id_documento"
 			unique="false"
 			cascade="all"
+			not-null="true"
 		/>
 	</class>
 </hibernate-mapping>

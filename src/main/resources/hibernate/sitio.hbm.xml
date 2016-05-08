@@ -10,19 +10,19 @@
 		
 		<list name="usuarios" cascade="all">
 			<key column="id_sitio"></key>
-			<index column="id_usuario"></index>
+			<index column="id_usuario_sitio"></index>
 			<one-to-many class="Usuario"/>
 		</list>
 		
 		<list name="cursos" cascade="all">
 			<key column="id_sitio"></key>
-			<index column="id_curso"></index>
+			<index column="id_curso_sitio"></index>
 			<one-to-many class="Curso"/>
 		</list>
 		
 		<list name="documentos" cascade="all">
 			<key column="id_sitio"></key>
-			<index column="id_documento"></index>
+			<index column="id_documento_sitio"></index>
 			<one-to-many class="Documento"/>
 		</list>		
 	</class>

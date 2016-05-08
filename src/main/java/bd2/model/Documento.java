@@ -1,7 +1,7 @@
 package bd2.model;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedList;
 
 /**
  * Un documento tiene un idioma y esta compuesto por parrafos
@@ -9,7 +9,7 @@ import java.util.LinkedList;
  */
 public class Documento {
 	private long id;
-	private Collection<Parrafo> parrafos = new LinkedList<Parrafo>();
+	private Collection<Parrafo> parrafos = new ArrayList<Parrafo>();
 	private Idioma idioma;
 	private String nombre;
 	private Integer complejidad;

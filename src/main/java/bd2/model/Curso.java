@@ -14,6 +14,10 @@ import java.util.Collection;
  */
 public class Curso {
 	
+	public Curso() {
+		super();
+	}
+
 	/**
 	 * Crea un curso con un nombre, un idioma y un nivel, en base a los parametros
 	 * recibidos.

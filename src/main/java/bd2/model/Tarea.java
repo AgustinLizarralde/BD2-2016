@@ -13,6 +13,10 @@ public abstract class Tarea {
 	protected Boolean completa = false;
 	
 	
+	public Tarea() {
+		super();
+	}
+
 	/**
 	 * constructor de una tarea, debe ser llamado por sus hijos
 	 */

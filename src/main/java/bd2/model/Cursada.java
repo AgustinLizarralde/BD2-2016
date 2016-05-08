@@ -13,6 +13,10 @@ import java.util.Iterator;
  */
 public class Cursada {
 	
+	public Cursada() {
+		super();
+	}
+
 	/**
 	 * @param curso
 	 * @param inicio

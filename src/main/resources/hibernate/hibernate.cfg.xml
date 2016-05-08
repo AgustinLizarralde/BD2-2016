@@ -21,6 +21,9 @@
 		</property>
 
 		<!-- Colocar las referencias a los archivos de mapping en este punto -->
+		<!--
+		<mapping resource="hibernate/mapeo.hbm.xml"/> 
+		-->
 		<mapping resource="hibernate/diccionario.hbm.xml"/> 
 		<mapping resource="hibernate/idioma.hbm.xml"/>
 		<mapping resource="hibernate/parrafo.hbm.xml"/>
@@ -32,6 +35,7 @@
 		<mapping resource="hibernate/cursada.hbm.xml"/>
 		<mapping resource="hibernate/usuario.hbm.xml"/>
 		<mapping resource="hibernate/sitio.hbm.xml"/>
+		
 
 	</session-factory>
 </hibernate-configuration>

@@ -8,27 +8,29 @@
 			<generator class="native"/>
 		</id>
 		
-		<property name="inicio"/>
+		<property name="inicio" column="inicio" type="date"/>
         
 		<many-to-one
 			name="usuario"
 			column="id_usuario"
-			cascade="all"
 			unique="true"
+			not-null="true"
+			cascade="all"
 			class="Usuario">
 		</many-to-one>
 		
 		<many-to-one
 			name="curso"
 			column="id_curso"
-			cascade="all"
 			unique="true"
+			not-null="true"
+			cascade="all"
 			class="Curso">
 		</many-to-one>
 		
 		<list name="pruebas" cascade="all">
 			<key column="id_cursada"/>
-			<list-index column="id_prueba"/>
+			<list-index column="id_cursada_prueba"/>
 			<one-to-many class="Prueba"/>
 		</list>
 		

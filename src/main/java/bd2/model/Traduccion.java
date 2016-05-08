@@ -11,6 +11,14 @@ public class Traduccion extends Tarea {
 	private Idioma idioma;
 	private String texto;
 	
+	public Traduccion() {
+		super();
+	}
+
+	public Traduccion(Date fecha, String descripcion, Boolean completa) {
+		super(fecha, descripcion, completa);
+	}
+	
 	public Traduccion(Date fecha, String descripcion, Boolean completado, String texto, Parrafo parrafo, Idioma idioma) {
 		super(fecha, descripcion, completado);
 		this.parrafo = parrafo;

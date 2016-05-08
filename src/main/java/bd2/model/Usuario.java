@@ -14,6 +14,10 @@ import java.util.Iterator;
  */
 public class Usuario {
 	
+	public Usuario() {
+		super();
+	}
+
 	/**
 	 * Crea un usuario con el email, el nombre y la fecha de creacion recibidos como
 	 * parametro.

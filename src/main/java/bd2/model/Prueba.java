@@ -7,6 +7,10 @@ package bd2.model;
  */
 public class Prueba {
 	
+	public Prueba() {
+		super();
+	}
+
 	/**
 	 * Crea un objeto Prueba con una leccion y un puntaje.
 	 * @param leccion

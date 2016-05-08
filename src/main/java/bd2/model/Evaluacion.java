@@ -7,6 +7,14 @@ import java.util.Date;
  *
  */
 public class Evaluacion extends Tarea {
+	
+	public Evaluacion(){
+		super();
+	}
+	public Evaluacion(Date fecha, String descripcion, Boolean completa) {
+		super(fecha, descripcion, completa);
+	}
+
 	private int puntaje;
 	private Traduccion traduccion;
 	

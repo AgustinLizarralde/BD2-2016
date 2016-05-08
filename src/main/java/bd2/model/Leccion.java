@@ -6,6 +6,11 @@ package bd2.model;
  */
 public class Leccion {
 	
+	public Leccion() {
+		super();
+	}
+
+
 	/**
 	 * Crea una leccion con el nombre indicado.
 	 * @param nombre
@@ -17,7 +22,7 @@ public class Leccion {
 
 	private long id;
 	private String nombre;
-
+	
 	/**
 	 * Devuelve el nombre de la leccion.
 	 * @return Nombre de la leccion.

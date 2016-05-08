@@ -20,7 +20,7 @@
 		
 		<list name="traducciones" cascade="all">
 			<key column="id_usuario"/>
-			<list-index column="id_traduccion"/>
+			<list-index column="id_traduccion_usuario"/>
 			<one-to-many class="Traduccion"/>
 		</list>
 		
@@ -34,7 +34,7 @@
 			
 			<list name="evaluaciones" cascade="all">
 				<key column="id_moderador"/>
-				<list-index column="id_evaluacion"/>
+				<list-index column="id_evaluacion_usuario"/>
 				<one-to-many class="Evaluacion"/>
 			</list>
 		</joined-subclass>
