@@ -14,7 +14,7 @@
 			name="usuario"
 			column="id_usuario"
 			cascade="all"
-			unique="true"
+			unique="false"
 			class="Usuario">
 		</many-to-one>
 		
@@ -22,7 +22,7 @@
 			name="curso"
 			column="id_curso"
 			cascade="all"
-			unique="true"
+			unique="false"
 			class="Curso">
 		</many-to-one>
 		
@@ -45,7 +45,7 @@
 		<many-to-one
 			name="idioma"
 			column="id_idioma"
-			unique="true"
+			unique="false"
 			cascade="all"
 			class="Idioma">
 		</many-to-one>
@@ -89,7 +89,7 @@
 		<many-to-one 
 			name="idioma" 
         	column="id_idioma" 
-        	unique="true"
+        	unique="false"
         	cascade="all"
 		/>
         
@@ -154,7 +154,7 @@
 			name="leccion"
 			column="id_leccion"
 			cascade="all"
-			unique="true"
+			unique="false"
 			class="Leccion">
 		</many-to-one>
 		
