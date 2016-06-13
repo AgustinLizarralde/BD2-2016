@@ -29,6 +29,7 @@ public class Queries {
 		consultaItemE();
 		consultaItemF();
 		consultaItemG("Leuchtturm");
+		consultaItemH();
 		*/
 	}
 	
@@ -297,4 +298,54 @@ public class Queries {
 		}
 	}
 	
+	public static void consultaItemH() {
+		Query queryResult;
+		List list;
+		try {
+			System.out.println("----------------------- Setting up Hibernate -----------------------");
+			Configuration cfg = new Configuration();
+			cfg.configure("hibernate/hibernate.cfg.xml");
+
+			System.out.println("Building sessions.........");
+			sessions = cfg.buildSessionFactory();
+
+			Session session = sessions.openSession();
+			Transaction tx = null;
+			try {
+				tx = session.beginTransaction();
+				queryResult = session.createQuery(""
+						+ "select distinct doc.nombre "
+						+ "from Documento as doc "
+						+ "join doc.parrafos as p "
+						//el documento no esta en los que tienen traducciones
+						+ "where doc not in ( "
+							//documentos con traducciones
+							+ "select doc "
+							+ "from Traduccion as t "
+							+ "join t.parrafo as p "
+							+ "join p.documento as doc "
+							+ "group by doc "
+						+ ")"
+						);
+				list = queryResult.list();
+				tx.commit();
+				Iterator<String> iterator = list.iterator();
+				while( iterator.hasNext() ){
+					System.out.println("El documento " + iterator.next() + " no tiene ninguna traduccion" );
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				if (tx != null) {
+					tx.rollback();
+				}
+				session.close();
+			}
+			session.disconnect();
+
+			System.out.println("DONE.");
+		} catch (Exception e) {
+			System.out.println("------------------------FAIL.------------------------");
+			e.printStackTrace();
+		}
+	}
 }
