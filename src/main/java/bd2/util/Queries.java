@@ -19,13 +19,17 @@ public class Queries {
 	private static SessionFactory sessions;
 	
 	public static void main(String[] args) {
-		//consultaItemA();
-		//consultaItemB();
-		//consultaItemC();
+		/*
+		consultaItemA();
+		consultaItemB();
+		consultaItemC();
 		Date desde = new GregorianCalendar(2015,Calendar.JULY,1).getTime();
 		Date hasta = new GregorianCalendar(2015,Calendar.DECEMBER,31).getTime();
 		consultaItemD(desde, hasta);
-		//consultaItemE();
+		consultaItemE();
+		consultaItemF();
+		consultaItemG("Leuchtturm");
+		*/
 	}
 	
 	public static void consultaItemA() {
@@ -248,4 +252,49 @@ public class Queries {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void consultaItemG(String palabra) {
+		Query queryResult;
+		List list;
+		try {
+			System.out.println("----------------------- Setting up Hibernate -----------------------");
+			Configuration cfg = new Configuration();
+			cfg.configure("hibernate/hibernate.cfg.xml");
+
+			System.out.println("Building sessions.........");
+			sessions = cfg.buildSessionFactory();
+
+			Session session = sessions.openSession();
+			Transaction tx = null;
+			try {
+				tx = session.beginTransaction();
+				queryResult = session.createQuery(""
+						+ "select distinct d.idioma.nombre "
+						+ "from Diccionario as d "
+						+ "join d.definiciones as def "
+						+ "where index(def) = :palabra  "
+						)
+					.setString("palabra", palabra);
+				list = queryResult.list();
+				tx.commit();
+				Iterator<String> iterator = list.iterator();
+				while( iterator.hasNext() ){
+					System.out.println("El idioma " + iterator.next() + " define la palabra '" + palabra + "'" );
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				if (tx != null) {
+					tx.rollback();
+				}
+				session.close();
+			}
+			session.disconnect();
+
+			System.out.println("DONE.");
+		} catch (Exception e) {
+			System.out.println("------------------------FAIL.------------------------");
+			e.printStackTrace();
+		}
+	}
+	
 }
