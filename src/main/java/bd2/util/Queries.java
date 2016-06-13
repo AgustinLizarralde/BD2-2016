@@ -19,7 +19,13 @@ public class Queries {
 	private static SessionFactory sessions;
 	
 	public static void main(String[] args) {
-		consultaItemE();
+		//consultaItemA();
+		//consultaItemB();
+		//consultaItemC();
+		Date desde = new GregorianCalendar(2015,Calendar.JULY,1).getTime();
+		Date hasta = new GregorianCalendar(2015,Calendar.DECEMBER,31).getTime();
+		consultaItemD(desde, hasta);
+		//consultaItemE();
 	}
 	
 	public static void consultaItemA() {
@@ -151,7 +157,7 @@ public class Queries {
 		}
 	}
 	
-	public static void consultaItemD() {
+	public static void consultaItemD(Date desde, Date hasta) {
 		Query queryResult;
 		List list;
 		try {
@@ -165,8 +171,6 @@ public class Queries {
 			Session session = sessions.openSession();
 			Transaction tx = null;
 			try {
-				Date desde = new GregorianCalendar(2015,Calendar.JULY,1).getTime();
-				Date hasta = new GregorianCalendar(2015,Calendar.DECEMBER,31).getTime();
 				tx = session.beginTransaction();
 				queryResult = session.createQuery(""
 						+ "select distinct m.nombre "
