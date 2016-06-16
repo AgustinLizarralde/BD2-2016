@@ -254,6 +254,70 @@ public class Queries {
 		}
 	}
 	
+	public static void consultaItemF() {
+		Query queryResult;
+		List list;
+		try {
+			System.out.println("----------------------- Setting up Hibernate -----------------------");
+			Configuration cfg = new Configuration();
+			cfg.configure("hibernate/hibernate.cfg.xml");
+
+			System.out.println("Building sessions.........");
+			sessions = cfg.buildSessionFactory();
+
+			Session session = sessions.openSession();
+			Transaction tx = null;
+			try {
+				tx = session.beginTransaction();
+				queryResult = session.createQuery(""
+							
+						+ "select distinct u.email "
+						+ "from Usuario as u "
+						+ "join u.cursadasRealizadas as cr "
+						//el curso no esta entre los desaprobados
+						+ "where cr not in ( "
+							//cursos desaprobados
+							+ "select cur "
+							+ "from Cursada as cur "
+							+ "join cur.curso.lecciones as lec "
+							+ "join cur.pruebas as pru "
+							//alguna leccion no esta aprobada por el usuario
+							+ "where lec not in( "
+								//lecciones aprobadas del usuario
+								+ "select leccion "
+								+ "from Usuario as user "
+								+ "join user.cursadasRealizadas as cursadas "
+								+ "join cursadas.pruebas as pruebas "
+								+ "join pruebas.leccion as leccion "
+								+ "where pruebas.puntaje >= 60 "
+								+ "and user = u "
+								+ "group by leccion "
+							+ ") "
+						+ ") "
+							
+						);
+				list = queryResult.list();
+				tx.commit();
+				Iterator<String> iterator = list.iterator();
+				while( iterator.hasNext() ){
+					System.out.println("Usuario con cursada aprobada: "+ iterator.next());
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				if (tx != null) {
+					tx.rollback();
+				}
+				session.close();
+			}
+			session.disconnect();
+
+			System.out.println("DONE.");
+		} catch (Exception e) {
+			System.out.println("------------------------FAIL.------------------------");
+			e.printStackTrace();
+		}
+	}
+	
 	public static void consultaItemG(String palabra) {
 		Query queryResult;
 		List list;
