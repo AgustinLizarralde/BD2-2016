@@ -15,10 +15,8 @@
 		<property name="hibernate.connection.username">grupo18</property>
 		<property name="hibernate.connection.password">grupo18</property>
 		
-		<property name="hibernate.show_sql">true</property>
-		<property name="hibernate.format_sql">
-			true
-		</property>
+		<property name="hibernate.show_sql">false</property>
+		<property name="hibernate.format_sql">true</property>
 
 		<mapping resource="hibernate/mappings.hbm.xml"/>
 
