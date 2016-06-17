@@ -14,11 +14,18 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 
-
+/**
+ * Clase Queries.
+ * Realiza varias consultas a la base de datos utilizando Hibernate y HQL.
+ */
 public class Queries {
 	
 	private static SessionFactory sessions;
-	
+
+	/**
+	 * Metodo main, ejecuta una a una y en orden todas las consultas.
+	 * @param args.
+	 */
 	public static void main(String[] args) {
 		Configuration cfg = new Configuration();
 		cfg.configure("hibernate/hibernate.cfg.xml");
@@ -43,6 +50,10 @@ public class Queries {
 		}
 	}
 	
+	/**
+	 * Consulta A: lista los nombres de todos los documentos.
+	 * @param session: sesion a la base de datos.
+	 */
 	public static void consultaItemA(Session session) {
 		Query queryResult;
 		List list;
@@ -66,6 +77,10 @@ public class Queries {
 		}
 	}
 	
+	/**
+	 * Consulta B: lista los emails de los moderadores que hayan evaluado traducciones al ingles.
+	 * @param session: sesion a la base de datos.
+	 */
 	public static void consultaItemB(Session session) {
 		Query queryResult;
 		List list;
@@ -95,6 +110,10 @@ public class Queries {
 		}
 	}
 	
+	/**
+	 * Consulta C: lista los usuarios que hayan iniciado una cursada de Frances de nivel 3 como minimo.
+	 * @param session: sesion a la base de datos.
+	 */
 	public static void consultaItemC(Session session) {
 		Query queryResult;
 		List list;
@@ -126,6 +145,12 @@ public class Queries {
 		}
 	}
 	
+	/**
+	 * Consulta D: lista los moderadores que hayan revisado alguna traduccion entre dos fechas pasadas como argumento.
+	 * @param session: sesion a la base de datos.
+	 * @param desde: fecha de inicio del intervalo.
+	 * @param hasta: fecha de fin del intervalo.
+	 */
 	public static void consultaItemD(Session session, Date desde, Date hasta) {
 		Query queryResult;
 		List list;
@@ -158,6 +183,10 @@ public class Queries {
 		}
 	}
 	
+	/**
+	 * Consulta E: lista los moderadores que hayan revisado alguna traduccion entre dos fechas pasadas como argumento.
+	 * @param session: sesion a la base de datos.
+	 */
 	public static void consultaItemE(Session session) {
 		Query queryResult;
 		List list;
@@ -190,6 +219,10 @@ public class Queries {
 		}
 	}
 	
+	/**
+	 * Consulta F: lista los emails de los usuarios con alguna cursada aprobada.
+	 * @param session: sesion a la base de datos.
+	 */
 	public static void consultaItemF(Session session) {
 		Query queryResult;
 		List list;
@@ -239,6 +272,11 @@ public class Queries {
 		}
 	}
 	
+	/**
+	 * Consulta G: lista el idioma que define la palabra enviada como parametro en su diccionario.
+	 * @param session: sesion a la base de datos.
+	 * @param palabra: palabra a buscar entre los idiomas.
+	 */
 	public static void consultaItemG(Session session, String palabra) {
 		Query queryResult;
 		List list;
@@ -269,6 +307,10 @@ public class Queries {
 		}
 	}
 	
+	/**
+	 * Consulta H: lista los nombres de los documentos que no tengan ningun paarrafo traducido (en ningun idioma).
+	 * @param session: sesion a la base de datos.
+	 */
 	public static void consultaItemH(Session session) {
 		Query queryResult;
 		List list;
@@ -305,6 +347,11 @@ public class Queries {
 		}
 	}
 		
+	/**
+	 * Consulta I: lista los nombres de los documentos que tengan parrafos sin traducir al idioma de nombre enviado como parametro.
+	 * @param session: sesion a la base de datos.
+	 * @param idioma: idioma en el que buscar los documentos.
+	 */
 	public static void consultaItemI(Session session, String idioma) {
 		Query queryResult;
 		List list;
