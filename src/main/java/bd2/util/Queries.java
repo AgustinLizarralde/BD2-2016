@@ -196,11 +196,10 @@ public class Queries {
 			tx = session.beginTransaction();
 			queryResult = session.createQuery(""
 					+ "select t.descripcion "
-					+ "from Tarea as t "
+					+ "from Traduccion as t "
 					+ "join t.idioma as idiomaTraduccion "
 					+ "join t.parrafo.documento.idioma as idiomaOriginal "
 					+ "where t.completa = true "
-					+ "and t.class = 'T' "
 					+ "and idiomaTraduccion.nombre = 'frances' "
 					+ "and idiomaOriginal.nombre = 'ingles' "
 					);
